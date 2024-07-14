@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+    <head>
+        <title>login</title>
+        <link rel="stylesheet" href="{% static '/css/style3.css'%}">
+    </head>
+    <body>
+        <div class="dlogin" >
+        <label  class="login">Login</label><br><br>
+        <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+            
+                <label class="lemail" >Email address</label><br><br>
+                <input class="iemail" name="email" placeholder="email" type="email"><br><br><br>
+                <label class="lpass">Password</label><br><br>
+                <input type="password" placeholder="password" class="ipass" ><br><br><br><br>
+                <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+    </body>
+    </html>

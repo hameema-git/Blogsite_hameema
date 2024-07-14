@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div style="font-weight:bold;font-size:30px;color:brown;position:relative;left:550px;top:30px;">Task Updates</div>
+    <table style="position:relative;left:350px;top:50px;background-color:yellow;width:600px;height:400px;">
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+        
+            <td>
+                <div>
+                    <button style="border:none;border-radius:10px;
+                    width:100px;background-color:green;color:white;font-weight:bold;position:relative;left:20px;">SAVE</button>
+                    <button style="border:none;border-radius:10px;width:100px;
+                    background-color:brown;font-weight:bold;position:relative;left:40px;"><a style="text-decoration:none;color:white;"
+                     href="{% url 'pg1' %}">HOME</a><button>
+                </div>
+                        <td>
+                </tr>
+            </table>
+        </form>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html'%} 
+{% load static %}
+{% block title %}home{% endblock %} 
+{% block content %}
+
+<img src="{% static '/image/blogback2.jpg' %}" style="width:1350px;height:580px;
+position:absolute;top:7px;left:7px;overflow-x:hidden;"> 
+
+<button  style="border:none;border-radius:10px 0px 10px 0px;font-weight:bold;
+position:relative;left:1000px;top:40px;width:150px;height:50px;
+background-color:white;font-family:cursive;"><a href="{% url 'pg1' %}" 
+    style="text-decoration:none;color:brown;font-size:30px;font-weight:bold;">HOME</a></button>
+<div style="width:1300px;height:600px;background-color:transperant;position:absolute;left:85px;top:115px;">
+{% for i in blo %}
+<div class="card" style="width:260px;height:200px;margin-left:20px;display:inline-block;margin-top:10px;">
+     
+   <center> <div class="card-body">
+        <h5 class="card-title" style="font-weight:bold;color:purple;font-family:cursive;">{{i.blog_name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Author:{{i.author}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{i.created_on}}</h6>
+    <a href="{% url 'pg5' pk=i.id %}" class="card-link" style="text-decoration:none;color:brown;font-weight:bold;">READ</a><br><br>
+    <button style="border:none;background-color:red;"><a style="text-decoration:none;
+        color:white;font-weight:bold;" href="{% url 'pg4' pk=i.id %}" class="card-link">DELETE</a></button>
+    <button style="border:none;background-color:yellow;"><a style="text-decoration:none;
+        color:white;font-weight:bold;"href="{% url 'pg6' pk=i.id %}" class="card-link">UPDATE</a></button>
+
+    </div>
+</center>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

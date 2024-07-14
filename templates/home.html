@@ -1,0 +1,25 @@
+{% extends 'base.html'%} 
+{% load static %}
+{% block title %}home{% endblock %} 
+{% block content %}
+<img src="{% static '/image/blogback3.jpg' %}" style="width:1350px;height:580px;
+position:absolute;top:7px;left:7px;"> 
+<div style="position:relative;top:250px;left:400px;color:brown;width:600px;font-family: cursive;">
+    <h1 style="font-size:75px;font-weight:bold;">Bloggers Point</h1>
+    </div>
+       <button style="position:relative;top:300px;left:460px;width:150px;height:40px;
+       font-family:cursive;font-size:20px;background-color:white;
+       border:none;border-radius:10px 0px 10px 0px;font-weight:bold;"><a href="{% url 'pg2' %}" style="text-decoration:none;color:#BF360C;">CREATE NEW</a></button>
+       <button style="position:relative;top:300px;left:570px;width:150px;height:40px;
+       font-family:cursive;font-size:20px;background-color:white;color:#BF360C;
+       border:none;border-radius:10px 0px 10px 0px;font-weight:bold;"><a href="{% url 'pg3' %}" style="text-decoration:none;color:#BF360C;">VIEW ALL</a></button><br><br>
+       <button style="position:relative;top:300px;left:580px;width:150px;height:40px;
+       font-family:cursive;font-size:20px;background-color:#BF360C;color:white;
+       border:none;border-radius:10px 0px 10px 0px;font-weight:bold;"><a href="{% url 'logout' %}" style="text-decoration:none;color:white;" >LOGOUT</a></button> 
+    
+       
+    
+       
+    
+ 
+{% endblock %}
